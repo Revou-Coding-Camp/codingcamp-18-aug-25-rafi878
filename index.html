@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Todo List</h1>
+            <p>Manage your tasks efficiently</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="todo-input">Task Description</label>
+                    <input type="text" id="todo-input" placeholder="Add a todo...">
+                    <span class="error-message" id="task-error"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="date-input">Due Date</label>
+                    <input type="date" id="date-input">
+                    <span class="error-message" id="date-error"></span>
+                </div>
+                
+                <button id="add-btn" class="btn btn-success">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+            
+            <div class="actions">
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All Tasks</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                
+                <button id="delete-all-btn" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Delete All
+                </button>
+            </div>
+            
+            <table class="tasks-table">
+                <thead>
+                    <tr>
+                        <th width="40%">TASK</th>
+                        <th width="20%">DUE DATE</th>
+                        <th width="20%">STATUS</th>
+                        <th width="20%">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-list">
+                    <!-- Tasks will be dynamically inserted here -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="empty-state">No task found. Add a task to get started!</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
